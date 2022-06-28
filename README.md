@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-# CryptoCookiesContracts
-CryptoCookies smart contracts
-=======
 # CryptoCookies - Crypto options trading application
 
 ## Overview
