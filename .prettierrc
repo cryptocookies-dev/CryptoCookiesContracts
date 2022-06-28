@@ -1,0 +1,6 @@
+{
+  "printWidth": 100,
+  "singleQuote": false,
+  "explicitTypes": "always",
+  "compiler": "0.8.13"
+}

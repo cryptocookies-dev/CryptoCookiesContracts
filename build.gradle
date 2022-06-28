@@ -1,0 +1,148 @@
+buildscript {
+
+    ext.WEB3J_VERSION = "4.9.0"
+
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        // Pull the web3j codegen lib
+        classpath group: 'org.web3j', name: 'codegen', version: WEB3J_VERSION
+    }
+}
+
+plugins {
+    id "org.web3j" version "$WEB3J_VERSION"
+    id "org.web3j.solidity" version "0.3.5"
+    id "com.github.node-gradle.node" version "3.2.1"
+    id 'java'
+    id 'idea'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+def typescriptDir = file("$projectDir/build/generated/sources/hardhat/main/typescript")
+
+configurations {
+    typescript
+}
+
+//noinspection GroovyUnusedAssignment
+def typescriptFolder = artifacts.add("typescript", typescriptDir) {
+    classifier 'typescript'
+    builtBy 'buildHardhat'
+}
+
+dependencies {
+    implementation "org.web3j:core:$WEB3J_VERSION"
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.21'
+}
+
+repositories {
+    mavenCentral()
+}
+
+node {
+    version = '16.14.0'
+    yarnVersion = '1.22.17'
+    download = true
+    nodeProjectDir = file(".")
+}
+
+idea {
+    module {
+        sourceDirs += typescriptDir
+        resourceDirs += file("$projectDir/scripts")
+        testSourceDirs += file("$projectDir/src/test/typescript")
+    }
+}
+
+web3j {
+    generatedPackageName = 'com.cryptocookies.web3j'
+    generatedFilesBaseDir = "$projectDir/build/generated/sources/web3j"
+}
+
+solidity {
+    optimize true
+    optimizeRuns 1337
+    resolvePackages false
+    version '0.8.13'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs += "$projectDir/build/generated/sources/web3j/main/java"
+        }
+    }
+}
+
+project.afterEvaluate {
+    compileSolidity.dependsOn("yarn")
+}
+
+task buildTypescript(type: YarnTask, dependsOn: 'yarn') {
+    inputs.dir("$projectDir/build/generated/sources/hardhat/main/typescript")
+    outputs.dir("$projectDir/build/hardhat/typescript")
+    group = 'build'
+    description = 'Compile hardhat typescript wrappers'
+    args = ["tsc", '--build', 'tsconfig.json']
+}
+buildTypescript.dependsOn "buildHardhat"
+build.dependsOn "buildTypescript"
+
+task hardhatClean(type: YarnTask, dependsOn: 'yarn') {
+    group = "build"
+    args = ["hardhat", 'clean']
+}
+clean.dependsOn "hardhatClean"
+
+task buildHardhat(type: YarnTask, dependsOn: 'yarn') {
+    inputs.dir("$projectDir/src/main/solidity")
+    outputs.dir("$projectDir/build/hardhat")
+    outputs.dir("$projectDir/build/generated/sources/hardhat/main/typescript")
+    group = 'build'
+    description = 'Hardhat compile'
+    args = ["hardhat", 'compile', '--show-stack-traces']
+}
+
+task testHardhat(type: YarnTask, dependsOn: 'yarn') {
+    inputs.dir("$projectDir/src/main/solidity")
+    inputs.dir("$projectDir/src/test/typescript")
+    outputs.upToDateWhen { true }
+
+    group = 'verification'
+    description = 'Hardhat test'
+    args = ["hardhat", 'test']
+}
+test.dependsOn "testHardhat"
+
+static boolean isTest(network) {
+    ['ganache', 'localhost'].contains(network)
+}
+
+['ganache', 'localhost', 'binancetestnet', 'rinkeby', 'goerli', 'arbitrumtestnet', 'avalanchetestnet'].each { network ->
+
+    def networkName = network.capitalize()
+
+    tasks.create(name: "deploy${networkName}", type: YarnTask, dependsOn: 'yarn') {
+        description = "Hardhat delpoy to $networkName"
+        args = ["hardhat", 'run', '--network', network, isTest(network) ? 'scripts/deployDev.ts' : 'scripts/deploy.ts']
+        dependsOn("testHardhat")
+    }
+
+    tasks.create(name: "upgrade$networkName", type: YarnTask, dependsOn: 'yarn') {
+        description = "Hardhat  upgrade to $networkName"
+        args = ["hardhat", 'run', '--verbose', '--network', network, 'scripts/upgrade.ts']
+        dependsOn("testHardhat")
+    }
+
+}
+
+
+
+

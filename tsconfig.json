@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "es2018",
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "outDir": "build/hardhat/typescript",
+    "declaration": true,
+    "composite": true,
+    "skipLibCheck": true
+  },
+  "include": [
+    "./scripts",
+    "./src/test/typescript",
+    "./build/generated/sources/hardhat/main/typescript"
+  ],
+  "files": [
+    "./hardhat.config.ts"
+  ],
+  "ts-node": {
+    "files": true
+  }
+}

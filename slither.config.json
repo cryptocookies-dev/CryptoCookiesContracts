@@ -1,0 +1,8 @@
+{
+  "hardhat_cache_directory": "build/hardhat/cache",
+  "hardhat_artifacts_directory": "build/hardhat/artifacts",
+  "filter_paths": [
+    "node_modules",
+    "ERC20PresetFixedSupply"
+  ]
+}

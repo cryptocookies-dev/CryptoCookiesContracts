@@ -1,0 +1,237 @@
+{
+  "manifestVersion": "3.2",
+  "proxies": [
+    {
+      "address": "0x9344737fa3aA1Cc2c9bFD6C1b95B5201D0E6dFC6",
+      "txHash": "0x7f6ebb37dbebfe5f5bc800fb04a4f965bec9914150a33e42caee36974e36d00e",
+      "kind": "uups"
+    }
+  ],
+  "impls": {
+    "983172ac27dc7affd7d7e551fa8078c51f1e594e8b93860668d54aa6712c3200": {
+      "address": "0x37E85194f39c084037312e2e28a03d96BC80a79E",
+      "txHash": "0xe47fe8308798a8451d02feed4c4c96ab17806fbd560b29282f09ef38746ffc5f",
+      "layout": {
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:39"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:44"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ContextUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol:36"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ERC165Upgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/utils/introspection/ERC165Upgradeable.sol:41"
+          },
+          {
+            "label": "_roles",
+            "offset": 0,
+            "slot": "101",
+            "type": "t_mapping(t_bytes32,t_struct(RoleData)34_storage)",
+            "contract": "AccessControlUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/AccessControlUpgradeable.sol:61"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "102",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "AccessControlUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/AccessControlUpgradeable.sol:235"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "151",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ERC1967UpgradeUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/ERC1967/ERC1967UpgradeUpgradeable.sol:211"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "201",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "UUPSUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol:107"
+          },
+          {
+            "label": "tokens",
+            "offset": 0,
+            "slot": "251",
+            "type": "t_array(t_bytes32)dyn_storage",
+            "contract": "CookieHolder",
+            "src": "src/main/solidity/CookieHolder.sol:37"
+          },
+          {
+            "label": "tokenSymbols",
+            "offset": 0,
+            "slot": "252",
+            "type": "t_mapping(t_bytes32,t_string_storage)",
+            "contract": "CookieHolder",
+            "src": "src/main/solidity/CookieHolder.sol:39"
+          },
+          {
+            "label": "settlementBalances",
+            "offset": 0,
+            "slot": "253",
+            "type": "t_mapping(t_bytes32,t_uint256)",
+            "contract": "CookieHolder",
+            "src": "src/main/solidity/CookieHolder.sol:41"
+          },
+          {
+            "label": "openDealBalances",
+            "offset": 0,
+            "slot": "254",
+            "type": "t_mapping(t_bytes32,t_uint256)",
+            "contract": "CookieHolder",
+            "src": "src/main/solidity/CookieHolder.sol:43"
+          },
+          {
+            "label": "tokenContracts",
+            "offset": 0,
+            "slot": "255",
+            "type": "t_mapping(t_bytes32,t_contract(IERC20MetadataUpgradeable)1103)",
+            "contract": "CookieHolder",
+            "src": "src/main/solidity/CookieHolder.sol:45"
+          },
+          {
+            "label": "dealIdCounter",
+            "offset": 0,
+            "slot": "256",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "CookieHolder",
+            "src": "src/main/solidity/CookieHolder.sol:58"
+          },
+          {
+            "label": "dealMap",
+            "offset": 0,
+            "slot": "257",
+            "type": "t_mapping(t_address,t_mapping(t_uint256,t_struct(Deal)4390_storage))",
+            "contract": "CookieHolder",
+            "src": "src/main/solidity/CookieHolder.sol:59"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address"
+          },
+          "t_array(t_bytes32)dyn_storage": {
+            "label": "bytes32[]"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]"
+          },
+          "t_bool": {
+            "label": "bool"
+          },
+          "t_bytes32": {
+            "label": "bytes32"
+          },
+          "t_contract(IERC20MetadataUpgradeable)1103": {
+            "label": "contract IERC20MetadataUpgradeable"
+          },
+          "t_enum(Side)4437": {
+            "label": "enum CookieHolder.Side"
+          },
+          "t_enum(Status)4434": {
+            "label": "enum CookieHolder.Status"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)"
+          },
+          "t_mapping(t_address,t_mapping(t_uint256,t_struct(Deal)4390_storage))": {
+            "label": "mapping(address => mapping(uint256 => struct CookieHolder.Deal))"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)"
+          },
+          "t_mapping(t_bytes32,t_contract(IERC20MetadataUpgradeable)1103)": {
+            "label": "mapping(bytes32 => contract IERC20MetadataUpgradeable)"
+          },
+          "t_mapping(t_bytes32,t_string_storage)": {
+            "label": "mapping(bytes32 => string)"
+          },
+          "t_mapping(t_bytes32,t_struct(RoleData)34_storage)": {
+            "label": "mapping(bytes32 => struct AccessControlUpgradeable.RoleData)"
+          },
+          "t_mapping(t_bytes32,t_uint256)": {
+            "label": "mapping(bytes32 => uint256)"
+          },
+          "t_mapping(t_uint256,t_struct(Deal)4390_storage)": {
+            "label": "mapping(uint256 => struct CookieHolder.Deal)"
+          },
+          "t_string_storage": {
+            "label": "string"
+          },
+          "t_struct(Deal)4390_storage": {
+            "label": "struct CookieHolder.Deal",
+            "members": [
+              {
+                "label": "payout",
+                "type": "t_uint256"
+              },
+              {
+                "label": "investment",
+                "type": "t_uint256"
+              },
+              {
+                "label": "tokenHash",
+                "type": "t_bytes32"
+              },
+              {
+                "label": "side",
+                "type": "t_enum(Side)4437"
+              },
+              {
+                "label": "status",
+                "type": "t_enum(Status)4434"
+              }
+            ]
+          },
+          "t_struct(RoleData)34_storage": {
+            "label": "struct AccessControlUpgradeable.RoleData",
+            "members": [
+              {
+                "label": "members",
+                "type": "t_mapping(t_address,t_bool)"
+              },
+              {
+                "label": "adminRole",
+                "type": "t_bytes32"
+              }
+            ]
+          },
+          "t_uint256": {
+            "label": "uint256"
+          }
+        }
+      }
+    }
+  }
+}
