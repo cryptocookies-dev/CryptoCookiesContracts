@@ -1,0 +1,387 @@
+{
+  "manifestVersion": "3.2",
+  "proxies": [
+    {
+      "address": "0x6DF83a95Bf4f5d433c758E014A21EAa6310A405B",
+      "txHash": "0xe63c6d1e86964c54ca45673d8bf2e86dbcabfb7dac02fa69044a79b1d588996c",
+      "kind": "uups"
+    }
+  ],
+  "impls": {
+    "bb54cfcd50ea855efe9c408527620747895eef19ee2b8f2efd518956518897c1": {
+      "address": "0xDb99eA068b65661eB1f98C3750aaf3a96E61Cbed",
+      "txHash": "0x7c12e9749fa0d485065eaec623539c8ecd9a6d1fdc9d1afc8e5e812a106cd7f7",
+      "layout": {
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:67"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ContextUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol:36"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ERC165Upgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/utils/introspection/ERC165Upgradeable.sol:41"
+          },
+          {
+            "label": "_roles",
+            "offset": 0,
+            "slot": "101",
+            "type": "t_mapping(t_bytes32,t_struct(RoleData)179_storage)",
+            "contract": "AccessControlUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/AccessControlUpgradeable.sol:61"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "102",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "AccessControlUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/AccessControlUpgradeable.sol:247"
+          },
+          {
+            "label": "_roleMembers",
+            "offset": 0,
+            "slot": "151",
+            "type": "t_mapping(t_bytes32,t_struct(AddressSet)2603_storage)",
+            "contract": "AccessControlEnumerableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/AccessControlEnumerableUpgradeable.sol:22"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "152",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "AccessControlEnumerableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/AccessControlEnumerableUpgradeable.sol:76"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "201",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ERC1967UpgradeUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/ERC1967/ERC1967UpgradeUpgradeable.sol:211"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "251",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "UUPSUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol:107"
+          },
+          {
+            "label": "_paused",
+            "offset": 0,
+            "slot": "301",
+            "type": "t_bool",
+            "contract": "PausableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/security/PausableUpgradeable.sol:29"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "302",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "PausableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/security/PausableUpgradeable.sol:102"
+          },
+          {
+            "label": "tokens",
+            "offset": 0,
+            "slot": "351",
+            "type": "t_array(t_bytes32)dyn_storage",
+            "contract": "CookieHolder",
+            "src": "src/main/solidity/CookieHolder.sol:73"
+          },
+          {
+            "label": "tokenSymbols",
+            "offset": 0,
+            "slot": "352",
+            "type": "t_mapping(t_bytes32,t_string_storage)",
+            "contract": "CookieHolder",
+            "src": "src/main/solidity/CookieHolder.sol:75"
+          },
+          {
+            "label": "settlementBalances",
+            "offset": 0,
+            "slot": "353",
+            "type": "t_mapping(t_bytes32,t_uint256)",
+            "contract": "CookieHolder",
+            "src": "src/main/solidity/CookieHolder.sol:77"
+          },
+          {
+            "label": "openDealBalances",
+            "offset": 0,
+            "slot": "354",
+            "type": "t_mapping(t_bytes32,t_uint256)",
+            "contract": "CookieHolder",
+            "src": "src/main/solidity/CookieHolder.sol:79"
+          },
+          {
+            "label": "tokenContracts",
+            "offset": 0,
+            "slot": "355",
+            "type": "t_mapping(t_bytes32,t_contract(IERC20MetadataUpgradeable)1463)",
+            "contract": "CookieHolder",
+            "src": "src/main/solidity/CookieHolder.sol:81"
+          },
+          {
+            "label": "dealIdCounter",
+            "offset": 0,
+            "slot": "356",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "CookieHolder",
+            "src": "src/main/solidity/CookieHolder.sol:83"
+          },
+          {
+            "label": "dealMap",
+            "offset": 0,
+            "slot": "357",
+            "type": "t_mapping(t_address,t_mapping(t_uint256,t_struct(Deal)5460_storage))",
+            "contract": "CookieHolder",
+            "src": "src/main/solidity/CookieHolder.sol:85"
+          },
+          {
+            "label": "totalPayoutAtZero",
+            "offset": 0,
+            "slot": "358",
+            "type": "t_mapping(t_bytes32,t_uint256)",
+            "contract": "CookieHolder",
+            "src": "src/main/solidity/CookieHolder.sol:87"
+          },
+          {
+            "label": "totalPayoutAtInf",
+            "offset": 0,
+            "slot": "359",
+            "type": "t_mapping(t_bytes32,t_uint256)",
+            "contract": "CookieHolder",
+            "src": "src/main/solidity/CookieHolder.sol:89"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_bytes32)dyn_storage": {
+            "label": "bytes32[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]",
+            "numberOfBytes": "1568"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]",
+            "numberOfBytes": "1600"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_bytes32": {
+            "label": "bytes32",
+            "numberOfBytes": "32"
+          },
+          "t_contract(IERC20MetadataUpgradeable)1463": {
+            "label": "contract IERC20MetadataUpgradeable",
+            "numberOfBytes": "20"
+          },
+          "t_enum(OptionType)5480": {
+            "label": "enum CookieHolder.OptionType",
+            "members": [
+              "PUT",
+              "CALL"
+            ],
+            "numberOfBytes": "1"
+          },
+          "t_enum(Side)5477": {
+            "label": "enum CookieHolder.Side",
+            "members": [
+              "BUY",
+              "SELL"
+            ],
+            "numberOfBytes": "1"
+          },
+          "t_enum(Status)5474": {
+            "label": "enum CookieHolder.Status",
+            "members": [
+              "UNKNOWN",
+              "PENDING",
+              "CONFIRMED",
+              "WON",
+              "LOST",
+              "PENDING_CLOSE",
+              "CLOSED",
+              "REJECTED"
+            ],
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_mapping(t_uint256,t_struct(Deal)5460_storage))": {
+            "label": "mapping(address => mapping(uint256 => struct CookieHolder.Deal))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_bytes32,t_contract(IERC20MetadataUpgradeable)1463)": {
+            "label": "mapping(bytes32 => contract IERC20MetadataUpgradeable)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_bytes32,t_string_storage)": {
+            "label": "mapping(bytes32 => string)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_bytes32,t_struct(AddressSet)2603_storage)": {
+            "label": "mapping(bytes32 => struct EnumerableSetUpgradeable.AddressSet)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_bytes32,t_struct(RoleData)179_storage)": {
+            "label": "mapping(bytes32 => struct AccessControlUpgradeable.RoleData)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_bytes32,t_uint256)": {
+            "label": "mapping(bytes32 => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(Deal)5460_storage)": {
+            "label": "mapping(uint256 => struct CookieHolder.Deal)",
+            "numberOfBytes": "32"
+          },
+          "t_string_storage": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_struct(AddressSet)2603_storage": {
+            "label": "struct EnumerableSetUpgradeable.AddressSet",
+            "members": [
+              {
+                "label": "_inner",
+                "type": "t_struct(Set)2302_storage",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_struct(Deal)5460_storage": {
+            "label": "struct CookieHolder.Deal",
+            "members": [
+              {
+                "label": "payout",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "investment",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "tokenHash",
+                "type": "t_bytes32",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "side",
+                "type": "t_enum(Side)5477",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "status",
+                "type": "t_enum(Status)5474",
+                "offset": 1,
+                "slot": "3"
+              },
+              {
+                "label": "optionType",
+                "type": "t_enum(OptionType)5480",
+                "offset": 2,
+                "slot": "3"
+              }
+            ],
+            "numberOfBytes": "128"
+          },
+          "t_struct(RoleData)179_storage": {
+            "label": "struct AccessControlUpgradeable.RoleData",
+            "members": [
+              {
+                "label": "members",
+                "type": "t_mapping(t_address,t_bool)",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "adminRole",
+                "type": "t_bytes32",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_struct(Set)2302_storage": {
+            "label": "struct EnumerableSetUpgradeable.Set",
+            "members": [
+              {
+                "label": "_values",
+                "type": "t_array(t_bytes32)dyn_storage",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_indexes",
+                "type": "t_mapping(t_bytes32,t_uint256)",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    }
+  }
+}

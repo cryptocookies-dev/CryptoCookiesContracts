@@ -5,13 +5,13 @@
 // When running the script with `npx hardhat run <script>` you'll find the Hardhat
 // Runtime Environment's members available in the global scope.
 
-import { deployCookieHolder } from "./common"
+import { deployCookieHolder } from "./common";
 import { parseUnits } from "ethers/lib/utils";
 import { hardhatArguments } from "hardhat";
 import {
   USDC__factory,
   WBTC__factory,
-  WETH__factory
+  WETH__factory,
 } from "../build/generated/sources/hardhat/main/typescript/factories/src/main/solidity/TestDependencies.sol";
 
 const hre = require("hardhat");
@@ -41,7 +41,10 @@ export async function deployTokensThenCookie() {
   await usdc.mint(owner, amount);
   console.info("Minted 10000 USDC");
 
-  const deployedCookieHolder = await deployCookieHolder();
+  const deployedCookieHolder = await deployCookieHolder([
+    ["WETH", "WBTC", "USDC"],
+    [weth.address, wbtc.address, usdc.address],
+  ]);
 
   if (hardhatArguments.network === "ganache" && hre.ethernal) {
     await hre.ethernal.push({

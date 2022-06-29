@@ -1,15 +1,11 @@
 import { ethers, hardhatArguments, upgrades } from "hardhat";
 import fs from "fs";
 
-// FIXME convert to task so we can pass in tokens to register on construction
-export async function deployCookieHolder() {
+export async function deployCookieHolder(args: any[]) {
   const owner = (await ethers.getSigners())[0];
 
   const CookieHolder = await ethers.getContractFactory("CookieHolder", owner);
-  const deployedCookieHolder = await upgrades.deployProxy(CookieHolder, [
-    [],
-    [],
-  ]);
+  const deployedCookieHolder = await upgrades.deployProxy(CookieHolder, args);
 
   console.log(
     "CookieHolder deployed to: " +
