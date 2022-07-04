@@ -48,7 +48,7 @@ const config: HardhatUserConfig = {
   },
   defender: {
     apiKey: "3UeDCinxrVjNCLGAVxwzDCiLgKjJpC3E",
-    apiSecret: process.env.DEFENDER_TEAM_API_SECRET_KEY ?? "<missing DEFENDER_TEAM_API_SECRET_KEY>",
+    apiSecret: process.env.DEFENDER_TEAM_API_SECRET_KEY as string,
   },
   networks: {
     bsc: {
@@ -57,7 +57,7 @@ const config: HardhatUserConfig = {
       accounts: [process.env.BINANCE_KEY as string],
     },
     avalanche: {
-      url: process.env.AVALANCE_URL,
+      url: process.env.AVALANCHE_URL,
       chainId: 43114,
       accounts: [process.env.AVALANCHE_KEY as string],
     },
