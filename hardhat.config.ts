@@ -47,7 +47,7 @@ const config: HardhatUserConfig = {
     ],
   },
   defender: {
-    apiKey: "3UeDCinxrVjNCLGAVxwzDCiLgKjJpC3E",
+    apiKey: process.env.DEFENDER_TEAM_API_API_KEY as string,
     apiSecret: process.env.DEFENDER_TEAM_API_SECRET_KEY as string,
   },
   networks: {
