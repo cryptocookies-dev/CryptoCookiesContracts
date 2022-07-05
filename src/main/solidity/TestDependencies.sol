@@ -20,3 +20,9 @@ contract USDC is ERC20PresetMinterPauser("USD Coin", "USDC") {
         return 6;
     }
 }
+
+contract USDC18 is ERC20PresetMinterPauser("USD Coin", "USDC") {
+    function decimals() public view virtual override returns (uint8) {
+        return 18;
+    }
+}
