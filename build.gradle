@@ -125,7 +125,7 @@ static boolean isTest(network) {
     ['ganache', 'localhost'].contains(network)
 }
 
-['ganache', 'localhost', 'binancetestnet', 'rinkeby', 'goerli', 'arbitrumtestnet', 'avalanchetestnet'].each { network ->
+['ganache', 'localhost', 'binancetestnet', 'rinkeby', 'goerli', 'arbitrumtestnet', 'avalanchetestnet', 'polygontestnet', 'moonbeamtestnet'].each { network ->
 
     def networkName = network.capitalize()
 

@@ -81,6 +81,17 @@ const config: HardhatUserConfig = {
       accounts: [process.env.BINANCE_TEST_KEY as string],
       chainId: 97,
     },
+    polygontestnet: {
+      url: process.env.POLYGON_TEST_URL,
+      accounts: [process.env.POLYGON_TEST_KEY as string],
+      gasPrice: 35000000000,
+      chainId: 80001,
+    },
+    moonbeamtestnet: {
+      url: process.env.MOONBEAM_TEST_URL,
+      accounts: [process.env.MOONBEAM_TEST_KEY as string],
+      chainId: 1287,
+    },
     ganache: {
       url: "http://127.0.0.1:8546",
       chainId: 1337,
